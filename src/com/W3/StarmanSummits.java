@@ -2,9 +2,8 @@ package com.W3;
 
 public class StarmanSummits {
     public void climbMountain(double height, double dash, double slide){
-        int attemp = 0; //so lan treo
-        int curHeight = 0;
-        while (height>dash-slide) {
+        int attemp = 1; //so lan treo
+        while (height>=dash) {
             height -= (dash-slide);
             attemp+=1;
         }
@@ -19,7 +18,7 @@ public class StarmanSummits {
 
     public static void main(String[] args) {
         StarmanSummits starman = new StarmanSummits();
-        starman.climbMountain(21287.4, 16.4, 4.3);
+        starman.climbMountain(123456, 54.7, 2.8);
 
     }
 }

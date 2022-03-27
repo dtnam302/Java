@@ -16,23 +16,24 @@ public class LiftoffWatch {
     }
     public boolean canWeLaunch(){
         if (temperature>=16.5 && temperature <=34.0){
-            return true;
+            //if temperature is satisfied => we look to the weather
+            if(weather == "Sunny") {
+                return wind<=60;
+            }
+            else if(weather == "Cloudy") {
+                return wind<=45;
+            }
+            else return false; //case rainy
         }
-        if(weather == "Sunny") {
-            return wind<=60;
-        }
-        if(weather == "Cloudy") {
-            return wind<=45;
-        }
-        return false;
+        else return false; //case temperature not in range (16.5,34)
     }
 
     public static void main(String[] args) {
         LiftoffWatch launch = new LiftoffWatch();
 
         launch.setTemp(27.0);
-        launch.setWeather("Sunny");
-        launch.setWind(53);
+        launch.setWeather("Cloudy");
+        launch.setWind(35);
         System.out.println(launch.canWeLaunch());
 
     }

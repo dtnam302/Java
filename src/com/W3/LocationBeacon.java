@@ -9,7 +9,7 @@ public class LocationBeacon {
 
     public void heartBeat(int startHour, int startMinute, int startDistance, int speed, int duration){
 
-        int speedInTenMinute = speed/(duration/10);
+        int speedInTenMinute = speed/6;
 
         distances = startDistance;
         hours = startHour;
